@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BookClub.Models.Book>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Список книг</h1>
+
+<p>User Id: @ViewData["UserId"]</p>
+
+<table class="table">
+    <thead>
+        <tr>            
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>                               
+             <td>
+               @Html.DisplayFor(modelItem => item.Title)
+             </td>
+             <td>
+                 <a asp-action="AddListBook" asp-route-id="@item.Id">Добавить в список</a>                                                                                                                                          
+             </td>
+       </tr>
+        }
+    </tbody>
+</table>
