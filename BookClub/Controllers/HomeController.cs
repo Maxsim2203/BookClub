@@ -20,11 +20,13 @@ namespace BookClub.Controllers
             _userManager = userManager;
         }
 
+
         public async Task<IActionResult> Index()
         {
             ViewData["UserId"] = _userManager.GetUserId(User);
+           
 
-            return View(_db.Books.ToList());
+                return View(_db.Books.ToList());
         }
 
         public async Task<IActionResult> AddListBook(int id)
