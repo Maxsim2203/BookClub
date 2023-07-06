@@ -15,4 +15,4 @@
 ![Image alt](https://github.com/Hihiz/BookClub/assets/98191494/98ef23a7-0692-4c08-b232-22d51ca84bc7)
 
 ## Диаграмма бд
-![Diagramm](https://github.com/Maxsim2203/BookClub/BookClub/blob/master/diagramm%20bd%20.png)
+![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/diagramm%20bd%20.png)
