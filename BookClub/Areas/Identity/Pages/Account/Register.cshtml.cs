@@ -142,7 +142,7 @@ namespace BookClub.Areas.Identity.Pages.Account
                     await _emailSender.SendEmailAsync(Input.Email, "Подтвердите вашу почту",
                         $"Пожалуйста, подтвердите свой аккаунт через <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>нажав здесь</a>.");
 
-                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    if (_userManager.Options.SignIn.RequireConfirmedAccount )
                     {
                         return RedirectToPage("Подтверждение регистрации", new { email = Input.Email, returnUrl = returnUrl });
                     }
