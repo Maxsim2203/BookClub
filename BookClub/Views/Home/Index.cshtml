@@ -10,6 +10,7 @@
 
 <table class="table">
     <thead>
+  
         <script type="text/javascript" language="JavaScript">
             var copy_page;
 
@@ -55,6 +56,51 @@
             <th></th>
         </tr>
     </thead>
+    <script>
+ function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+    a[i].style.display = "";
+    } else {
+    a[i].style.display = "none";
+    }
+    }
+    }
+    </script>
+   
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Выбрать книгу </button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#ariel">Ариэль</a>
+            <a href="#Fight club">Бойцовский клуб</a>
+            <a href="#War and Peace">Война и мир</a>
+            <a href="#To the open sky">В открытое небо</a>
+            <a href="#Sovereign">Государь</a>
+            <a href="#Eugene Onegin">Евгений Онегин</a>
+            <a href="#Golden calf">Золотой телёнок</a>
+            <a href="#Metro2034">Метро2034</a>
+            <a href="#Wisdom of Hope and other talk about Dante">Мудрость Надежды и другие разговоры о Данте</a>
+            <a href="#Hotel At the Dead Alpinist">Отель «У Погибшего Альпиниста»</a>
+            <a href="#Crossroads">Перекрёстки</a>
+            <a href="#Beautiful world, where are you?">Прекрасный мир, где же ты?</a>
+            <a href="#The True Story of Anna Karenina">Подлинная история Анны Карениной</a>
+            <a href="#Roadside Picnic">Пикник на обочине</a>
+            <a href="#It's hard to be a god">Трудно быть богом</a>
+            <a href="#The Man Who Died Twice">Человек, который умер дважды</a>
+            <a href="#Sherlock Holmes">Шерлок Холмс</a>
+            <a href="#The Speckled Band">The Speckled Band</a>
+        </div>
+    </div>
 
     <tbody>
         @foreach (var item in Model)
