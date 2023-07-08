@@ -15,6 +15,14 @@ builder.Services.AddDefaultIdentity<ApplicationIdentityUser>(options => options.
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
    .AddDefaultTokenProviders();
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { "ru-Ru", "ru" };
+    options.SetDefaultCulture(supportedCultures[0])
+        .AddSupportedCultures(supportedCultures)
+        .AddSupportedUICultures(supportedCultures);
+});
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // Default Password settings.

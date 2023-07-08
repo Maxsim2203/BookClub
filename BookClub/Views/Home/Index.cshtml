@@ -1,10 +1,13 @@
 ﻿@model IEnumerable<BookClub.Models.Book>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Список книг";
+    ViewData["Author"] = "Авторы";
 }
+@using Microsoft.AspNetCore.Mvc.Localization
 
 <h1>Список книг</h1>
+
 
 <p>Пользователь: @ViewData["UserId"]</p>
 
@@ -78,9 +81,9 @@
     </script>
    
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Выбрать книгу </button>
+        <button onclick="myFunction()" class="dropbtn">Контекстный поиск </button>
         <div id="myDropdown" class="dropdown-content">
-            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <input type="text" placeholder="Найти" id="myInput" onkeyup="filterFunction()">
             <a href="#ariel">Ариэль</a>
             <a href="#Fight club">Бойцовский клуб</a>
             <a href="#War and Peace">Война и мир</a>
@@ -110,7 +113,13 @@
                @Html.DisplayFor(modelItem => item.Title)
              </td>
              <td>
-                 <a asp-action="AddListBook" asp-route-id="@item.Id">Добавить в список</a>                                                                                                                                          
+               @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost) <i>руб</i>
+                </td>
+             <td>
+                 <a asp-action="AddListBook" asp-route-id="@item.Id">Добавить в корзину</a>                                                                                                                                          
              </td>
        </tr>
         }

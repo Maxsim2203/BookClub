@@ -8,5 +8,10 @@ namespace BookClub.Models
         public int Id { get; set; }
         [Display(Name = "Книги")]
         public string Title { get; set; }
+
+        [Display(Name = "Авторы")]
+        public string Author { get; set; }
+
+        public decimal Cost { get; set; }
     }
 }

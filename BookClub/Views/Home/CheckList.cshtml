@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Book";
+   //ViewData["Author"] = "Авторы";
+    //ViewData["Cost"] = "Цена";
 }
 
 <h1>Корзина прочитанных книг</h1>
@@ -67,6 +69,12 @@
         <td>
                     @Html.DisplayFor(modelItem => item.User.Fio)
         </td>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>*@
         <td>
           <a asp-action="DeleteListBook" asp-route-id="@item.Id">Удалить</a>                                           
         </td>

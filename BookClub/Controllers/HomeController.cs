@@ -46,7 +46,9 @@ namespace BookClub.Controllers
                 ReadBook readBook = new ReadBook()
                 {
                     BookId = book.Id,
-                    UserId = userId
+                    UserId = userId,
+                   // Author = book.Author,
+                    //Cost = book.Cost
                 };
 
                 try
@@ -101,4 +103,5 @@ namespace BookClub.Controllers
             return LocalRedirect(returnUrl);
         }
     }
+   
 }
