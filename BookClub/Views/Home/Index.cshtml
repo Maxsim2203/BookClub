@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Список книг";
     ViewData["Author"] = "Авторы";
+    
 }
 @using Microsoft.AspNetCore.Mvc.Localization
 
@@ -55,7 +56,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-
             <th></th>
         </tr>
     </thead>
@@ -104,8 +104,9 @@
             <a href="#The Speckled Band">The Speckled Band</a>
         </div>
     </div>
+    
 
-    <tbody>
+      <tbody>
         @foreach (var item in Model)
         {
         <tr>                               
@@ -119,9 +120,11 @@
                     @Html.DisplayFor(modelItem => item.Cost) <i>руб</i>
                 </td>
              <td>
-                 <a asp-action="AddListBook" asp-route-id="@item.Id">Добавить в корзину</a>                                                                                                                                          
+                 <a asp-action="AddListBook" asp-route-id="@item.Id">Добавить в корзину</a>
+                    <a asp-action="Book_detail" asp-route-id="@item.Title">Посмотреть детальную информацию</a>
              </td>
-       </tr>
+
+        </tr>
         }
     </tbody>
 </table>

@@ -1,4 +1,5 @@
 ﻿using BookClub.Models;
+using BookClub.Views.Home;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,5 +17,7 @@ namespace BookClub.Data
 
         //public decimal Cost { get; set; }
         public DbSet<Book> Books { get; set; }
+       
+        //public DbSet<Book_detailModel> DetailBooks { get; set; }  
     }
 }

@@ -25,9 +25,7 @@ namespace BookClub.Controllers
         public async Task<IActionResult> Index()
         {
             ViewData["UserId"] = _userManager.GetUserId(User);
-           
-
-                return View(_db.Books.ToList());
+               return View(_db.Books.ToList());
         }
 
         public async Task<IActionResult> AddListBook(int id)
@@ -102,6 +100,12 @@ namespace BookClub.Controllers
 
             return LocalRedirect(returnUrl);
         }
+      public IActionResult Book_detail ()
+    {
+            //return View(_db.DetailBooks.ToList());
+           return View();
+        }
     }
-   
+    
+
 }
