@@ -7,6 +7,7 @@
     //ViewData["Description"] = "Анотация";
     //ViewData["Date relase"] = "Дата выхода";
     //ViewData["Edition"] = "Рецензия";
+    //ViewData["Category"] = "Категория";
     
 }
 @using Microsoft.AspNetCore.Mvc.Localization
@@ -32,6 +33,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Edition)
         </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>*@
 
         <th></th>
     </tr>
