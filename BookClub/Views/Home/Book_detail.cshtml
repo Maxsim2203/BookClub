@@ -2,15 +2,16 @@
 @model BookClub.Views.Home.Book_detailModel
 @{
     ViewData["Title"] = "Список книг";
-    ViewData["Author"] = "Авторы";
-    ViewData["Cost"] = "Цена";
-    ViewData["Description"] = "Анотация";
-    ViewData["Date relase"] = "Дата выхода";
-    ViewData["Edition"] = "Рецензия";
+    //ViewData["Author"] = "Авторы";
+    //ViewData["Cost"] = "Цена";
+    //ViewData["Description"] = "Анотация";
+    //ViewData["Date relase"] = "Дата выхода";
+    //ViewData["Edition"] = "Рецензия";
     
 }
 @using Microsoft.AspNetCore.Mvc.Localization
 <h1>Детальная информация о книгах</h1>
+<table class="table">
 <thead>
     <tr>
         <th>
@@ -35,3 +36,6 @@
         <th></th>
     </tr>
 </thead>
+
+
+</table>

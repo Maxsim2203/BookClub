@@ -1,5 +1,6 @@
 ﻿using BookClub.Data;
 using BookClub.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
@@ -13,9 +14,9 @@ namespace BookClub.Controllers
     {
         private readonly ApplicationDbContext _db;
 
-        private readonly UserManager<ApplicationIdentityUser> _userManager;
+        private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationIdentityUser> _userManager;
 
-        public HomeController(ApplicationDbContext db, UserManager<ApplicationIdentityUser> userManager)
+        public HomeController(ApplicationDbContext db, Microsoft.AspNetCore.Identity.UserManager<ApplicationIdentityUser> userManager)
         {
             _db = db;
             _userManager = userManager;
@@ -46,7 +47,7 @@ namespace BookClub.Controllers
                     BookId = book.Id,
                     UserId = userId,
                    // Author = book.Author,
-                    //Cost = book.Cost
+                   //Cost = book.Cost
                 };
 
                 try
@@ -100,12 +101,21 @@ namespace BookClub.Controllers
 
             return LocalRedirect(returnUrl);
         }
-      public IActionResult Book_detail ()
+      public async Task<IActionResult> Book_detail ()
     {
+            ViewData["Title"] = "Список книг";
+            ViewData["Author"] = "Авторы";
+            ViewData["Cost"] = "Цена";
+            ViewData["Description"] = "Анотация";
+            ViewData["Date relase"] = "Дата выхода";
+            ViewData["Edition"] = "Рецензия";
             //return View(_db.DetailBooks.ToList());
-           return View();
+            return View();
         }
-    }
-    
-
+    } 
 }
+//public async Task<IActionResult> Index()
+//{
+//    ViewData["UserId"] = _userManager.GetUserId(User);
+//    return View(_db.Books.ToList());
+//}

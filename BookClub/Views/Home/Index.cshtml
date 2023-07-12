@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<BookClub.Models.Book>
 
 @{
-    ViewData["Title"] = "Список книг";
-    ViewData["Author"] = "Авторы";
+    //ViewData["Title"] = "Список книг";
+    //ViewData["Author"] = "Авторы";
     
 }
 @using Microsoft.AspNetCore.Mvc.Localization
@@ -121,7 +121,7 @@
                 </td>
              <td>
                  <a asp-action="AddListBook" asp-route-id="@item.Id">Добавить в корзину</a>
-                    <a asp-action="Book_detail" asp-route-id="@item.Title">Посмотреть детальную информацию</a>
+                    <a asp-action="Book_detail" asp-route-id="@item.ToString">Посмотреть детальную информацию</a>
              </td>
 
         </tr>

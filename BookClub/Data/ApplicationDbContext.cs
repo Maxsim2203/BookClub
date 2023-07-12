@@ -17,7 +17,8 @@ namespace BookClub.Data
 
         //public decimal Cost { get; set; }
         public DbSet<Book> Books { get; set; }
-       
-        //public DbSet<Book_detailModel> DetailBooks { get; set; }  
+        public object DetailBooks { get; internal set; }
+
+        //public DbSet<Book_detailModel> Book_Details { get; set; }  
     }
 }
