@@ -15,4 +15,4 @@
 ![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/Index.png)
 
 ## Диаграмма бд
-![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/diagramm%20bd%20.png)
+![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/Diagramm.png)
