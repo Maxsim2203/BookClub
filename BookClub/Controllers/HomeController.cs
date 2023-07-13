@@ -1,4 +1,5 @@
-﻿using BookClub.Data;
+﻿using AspNetCore;
+using BookClub.Data;
 using BookClub.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
@@ -103,19 +104,17 @@ namespace BookClub.Controllers
         }
       public async Task<IActionResult> Book_detail ()
     {
-            ViewData["Title"] = "Список книг";
-            ViewData["Author"] = "Авторы";
-            ViewData["Cost"] = "Цена";
-            ViewData["Description"] = "Анотация";
-            ViewData["Date relase"] = "Дата выхода";
-            ViewData["Edition"] = "Рецензия";
-            //return View(_db.DetailBooks.ToList());
-            return View();
+            //ViewBag.Book = new Book()
+            //{
+            //    Title = "Title",
+            //    Author = "Author",
+            //    //Cost = "Cost",
+            //    Description = "Descriptiion",
+            //    Edition = "Edition",
+            //};
+            return View(_db.Books.ToList());
+           //return View();
         }
     } 
 }
-//public async Task<IActionResult> Index()
-//{
-//    ViewData["UserId"] = _userManager.GetUserId(User);
-//    return View(_db.Books.ToList());
-//}
+

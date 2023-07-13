@@ -1,14 +1,8 @@
 ﻿@page
-@model BookClub.Views.Home.Book_detailModel
+@model BookClub.Models.Book
 @{
-    //ViewData["Title"] = "Список книг";
-    //ViewData["Author"] = "Авторы";
-    //ViewData["Cost"] = "Цена";
-    //ViewData["Description"] = "Анотация";
-    //ViewData["Date relase"] = "Дата выхода";
-    //ViewData["Edition"] = "Рецензия";
-    //ViewData["Category"] = "Категория";
-    
+    ViewData["Books"] = "Book_detail";
+    //ViewBag.Book = "Book";
 }
 @using Microsoft.AspNetCore.Mvc.Localization
 <h1>Детальная информация о книгах</h1>
@@ -18,21 +12,36 @@
         <th>
          </th>
 
-        <th>
-           @Html.DisplayNameFor(model => model.Title)
+            <td>
+                @Html.DisplayNameFor(model => model.Title)   
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Author)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Cost)<i>руб</i>
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Description)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Edition)
+            </td>
+       @* <th>
+                @ViewBag.Book.Title;
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Author)
+                @ViewBag.Book.Author;
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cost)
+                @ViewBag.Book.Cost;
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+                @ViewBag.Book.Description;
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Edition)
-        </th>
+                @ViewBag.Book.Edition;
+        </th>*@
             @*<th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>*@
@@ -40,6 +49,5 @@
         <th></th>
     </tr>
 </thead>
-
-
 </table>
+
