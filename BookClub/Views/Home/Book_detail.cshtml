@@ -1,11 +1,14 @@
 ﻿@page
-@model BookClub.Models.Book
+@model IEnumerable<BookClub.Models.Book>
 @{
     ViewData["Books"] = "Book_detail";
     //ViewBag.Book = "Book";
 }
 @using Microsoft.AspNetCore.Mvc.Localization
+
 <h1>Детальная информация о книгах</h1>
+@foreach (var item in Model)
+{
 <table class="table">
 <thead>
     <tr>
@@ -13,19 +16,19 @@
          </th>
 
             <td>
-                @Html.DisplayNameFor(model => model.Title)   
+                    @Html.DisplayNameFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Author)
+                    @Html.DisplayNameFor(modelItem => item.Author)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Cost)<i>руб</i>
+                    @Html.DisplayNameFor(modelItem => item.Cost)<i>руб</i>
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Description)
+                    @Html.DisplayNameFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Edition)
+                    @Html.DisplayNameFor(modelItem => item.Edition)
             </td>
        @* <th>
                 @ViewBag.Book.Title;
@@ -50,4 +53,4 @@
     </tr>
 </thead>
 </table>
-
+};

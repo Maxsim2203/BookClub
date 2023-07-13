@@ -7,12 +7,19 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using Newtonsoft;
+using Newtonsoft.Json.Linq;
+using System.Threading;
+using Azure.Core;
 
 namespace BookClub.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+                  
         private readonly ApplicationDbContext _db;
 
         private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationIdentityUser> _userManager;
@@ -27,7 +34,9 @@ namespace BookClub.Controllers
         public async Task<IActionResult> Index()
         {
             ViewData["UserId"] = _userManager.GetUserId(User);
+
                return View(_db.Books.ToList());
+           
         }
 
         public async Task<IActionResult> AddListBook(int id)
@@ -116,5 +125,8 @@ namespace BookClub.Controllers
            //return View();
         }
     } 
+
 }
+
+
 
