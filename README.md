@@ -11,6 +11,5 @@ WeB ASP.NET Core 7
 ![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/main%20window.png)
 ## Просмотр своего списка прочитаных книг, с возможнотью удаления книги из списка
 ![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/Index.png)
-
 ## Диаграмма бд
 ![Diagramm](https://github.com/Maxsim2203/BookClub/blob/master/Diagramm.png)
