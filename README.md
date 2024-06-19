@@ -3,7 +3,6 @@ WeB ASP.NET Core 7
 * С#
 * SQL
 * HTML
-  
 ## Регистрация
 ![Registration](https://github.com/Maxsim2203/BookClub/blob/master/registation.png)
 ## Авторизация
