@@ -1,4 +1,4 @@
-WeB ASP.NET Core 7 
+Web ASP.NET Core 7 
 * MSSQL
 * С#
 * SQL
